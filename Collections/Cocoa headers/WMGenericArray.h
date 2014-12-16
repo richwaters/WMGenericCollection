@@ -42,6 +42,7 @@
 - (NSUInteger)indexOfObjectIdenticalTo:(object_class)anObject inRange:(NSRange)range;\
 - (BOOL)isEqualToArray:(WMGenericArray *)otherArray;\
 - (object_class)lastObject;\
+- (object_class)firstObject;\
 - (NSEnumerator *)objectEnumerator;\
 - (NSEnumerator *)reverseObjectEnumerator;\
 - (NSData *)sortedArrayHint;\
@@ -87,11 +88,11 @@
 \
 + (id)array;\
 + (id)arrayWithObject:(object_class)anObject;\
-+ (id)arrayWithObjects:(const object_class [])objects count:(NSUInteger)cnt;\
-+ (id)arrayWithObjects:(object_class)firstObj, ... NS_REQUIRES_NIL_TERMINATION;\
++ (id)arrayWithObjects:(__strong const object_class [])objects count:(NSUInteger)cnt;\
++ (id)arrayWithObjects:(__strong object_class)firstObj, ... NS_REQUIRES_NIL_TERMINATION;\
 + (id)arrayWithArray:(WMGenericArray *)array;\
 \
-- (id)initWithObjects:(const object_class [])objects count:(NSUInteger)cnt;\
+- (id)initWithObjects:(__strong const object_class [])objects count:(NSUInteger)cnt;\
 - (id)initWithObjects:(object_class)firstObj, ... NS_REQUIRES_NIL_TERMINATION;\
 - (id)initWithArray:(WMGenericArray *)array;\
 - (id)initWithArray:(WMGenericArray *)array copyItems:(BOOL)flag;\
@@ -142,6 +143,7 @@ _Pragma("clang diagnostic ignored \"-Wduplicate-method-match\"")\
 - (NSUInteger)indexOfObjectIdenticalTo:(object_class)anObject inRange:(NSRange)range;\
 - (BOOL)isEqualToArray:(WMGenericArray *)otherArray;\
 - (object_class)lastObject;\
+- (object_class)firstObject;\
 - (NSEnumerator *)objectEnumerator;\
 - (NSEnumerator *)reverseObjectEnumerator;\
 - (NSData *)sortedArrayHint;\
@@ -184,12 +186,12 @@ _Pragma("clang diagnostic ignored \"-Wduplicate-method-match\"")\
 \
 + (id)array;\
 + (id)arrayWithObject:(object_class)anObject;\
-+ (id)arrayWithObjects:(const object_class [])objects count:(NSUInteger)cnt;\
-+ (id)arrayWithObjects:(object_class)firstObj, ... NS_REQUIRES_NIL_TERMINATION;\
++ (id)arrayWithObjects:(__strong const object_class [])objects count:(NSUInteger)cnt;\
++ (id)arrayWithObjects:(__strong object_class)firstObj, ... NS_REQUIRES_NIL_TERMINATION;\
 + (id)arrayWithArray:(WMGenericArray *)array;\
 \
-- (id)initWithObjects:(const object_class [])objects count:(NSUInteger)cnt;\
-- (id)initWithObjects:(object_class)firstObj, ... NS_REQUIRES_NIL_TERMINATION;\
+- (id)initWithObjects:(__strong const object_class [])objects count:(NSUInteger)cnt;\
+- (id)initWithObjects:(__strong object_class)firstObj, ... NS_REQUIRES_NIL_TERMINATION;\
 - (id)initWithArray:(WMGenericArray *)array;\
 - (id)initWithArray:(WMGenericArray *)array copyItems:(BOOL)flag;\
 \
@@ -305,6 +307,7 @@ _Pragma("clang diagnostic pop")
 - (NSUInteger)indexOfObjectIdenticalTo:(object_class)anObject inRange:(NSRange)range;\
 - (BOOL)isEqualToArray:(WMGenericArray *)otherArray;\
 - (object_class)lastObject;\
+- (object_class)firstObject;\
 - (NSEnumerator *)objectEnumerator;\
 - (NSEnumerator *)reverseObjectEnumerator;\
 - (NSData *)sortedArrayHint;\
@@ -385,6 +388,7 @@ _Pragma("clang diagnostic ignored \"-Wduplicate-method-match\"")\
 - (NSUInteger)indexOfObjectIdenticalTo:(object_class)anObject inRange:(NSRange)range;\
 - (BOOL)isEqualToArray:(WMGenericArray *)otherArray;\
 - (object_class)lastObject;\
+- (object_class)firstObject;\
 - (NSEnumerator *)objectEnumerator;\
 - (NSEnumerator *)reverseObjectEnumerator;\
 - (NSData *)sortedArrayHint;\
